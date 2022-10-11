@@ -4,7 +4,7 @@ namespace csharp_boolflix.Models
 {
     public class MediaContent
     {
-        public int MediaContentId { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         //definita in minuti
         public int Durata { get; set; }
@@ -36,6 +36,7 @@ public class Movie : MediaContent {
     public MediaInfo? MediaInfo { get; set; }
 }
 public class Episode : MediaContent {
+    
     public int SeasonNumber { get; set; }
 
 }

@@ -5,7 +5,9 @@ namespace csharp_boolflix
 {
     public class BoolflixContext : DbContext
     {
-        public DbSet<MediaContent> MediaContents { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<TvSeries> TvSeries { get; set; }
+        public DbSet<Episode> Episodes { get; set; }
         public DbSet<MediaInfo> MediaInfos { get; set; }
 
 
