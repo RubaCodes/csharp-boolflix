@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+//Controller esterno
 namespace csharp_boolflix.Controllers
 {
     
