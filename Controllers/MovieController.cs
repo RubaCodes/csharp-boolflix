@@ -1,5 +1,6 @@
 ﻿using csharp_boolflix.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace csharp_boolflix.Controllers
 {
@@ -31,8 +32,10 @@ namespace csharp_boolflix.Controllers
                 return View(data);
             }
             Movie movie = new Movie();
-            //data.Features = _context.Features.Where(x => data.SelectedFeatures.Contains(x.Id)).toList();
-            //data.Actors = _context.Actors.Where(x => data.SelectedActors.Contains(x.Id)).toList();
+            //errore qui inspiegabile
+           // data.Movie.MediaInfo.Features = _context.Features.Where(x => data.SelectedFeatures.Contains(x.Id)).ToList();
+            //data.Pizza.Ingredients = _pc.Ingredients.Where(x => data.SelectedIngredients.Contains(x.Id)).ToList();        
+           // data.Movie.MediaInfo.Cast = _context.Actors.Where(act => data.SelectedActors.Contains(act.Id)).ToList();
             return RedirectToAction("Movies", "Editor");
         }
     }
