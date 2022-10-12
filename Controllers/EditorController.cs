@@ -23,7 +23,8 @@ namespace csharp_boolflix.Controllers
         }
         public IActionResult Genres()
         {
-            return View();
+            List<Genre> genres = _context.Genres.ToList();
+            return View(genres);
         }
 
         //Features

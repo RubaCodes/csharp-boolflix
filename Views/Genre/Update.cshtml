@@ -1,0 +1,12 @@
+﻿@model Feature
+<div>
+    <form asp-controller="Feature" asp-action="Update" method="post">
+       @Html.AntiForgeryToken() 
+        <div class="form-group mb-3">
+            <label >Inserisci il nome della feature</label>
+            <input type="text" asp-for="Name" class="form-control" />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <button class="btn btn-primary">Aggiorna</button>
+    </form>
+</div>

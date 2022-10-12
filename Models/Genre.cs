@@ -9,5 +9,7 @@ public class Genre
     public string Name { get; set; }
     public List<MediaInfo> MediaInfos { get; set; }
 
-
+    public Genre() {
+        MediaInfos = new List<MediaInfo>();
+    }
 }
