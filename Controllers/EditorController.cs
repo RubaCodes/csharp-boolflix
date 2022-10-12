@@ -15,7 +15,8 @@ namespace csharp_boolflix.Controllers
         }
         public IActionResult Movies()
         {
-            return View();
+            List<Movie> movies = _context.Movies.ToList();
+            return View(movies);
         }
         public IActionResult TvSeries()
         {

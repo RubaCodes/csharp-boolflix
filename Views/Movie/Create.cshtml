@@ -1,0 +1,53 @@
+﻿@model MovieExtended 
+<div>
+    <form asp-controller="Movie" asp-action="Create" method="post">
+       @Html.AntiForgeryToken() 
+        <div class="form-group mb-3">
+            <label>Inserisci il titolo del film</label>
+            <input type="text" asp-for="Movie.Title" class="form-control" />
+            <span class="text-danger" asp-validation-for="Movie.Title"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label>Inserisci la descrizione del Film </label>
+            <textarea rows="7" asp-for="Movie.Description" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="Movie.Description"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label>Inserisci la durata del film </label>
+            <input type="number" step="1" asp-for="Movie.Durata" class="form-control"/>
+            <span class="text-danger" asp-validation-for="Movie.Durata"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label>Seleziona i generi:</label>
+            <select class="d-block w-100" asp-for="SelectedGenres">
+                @foreach (var item in Model.Genres)
+                {
+                    <option value="@item.Id" >@item.Name</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3 form-group">
+            <label>Seleziona le features :</label>
+            <select class="d-block w-100" asp-for="SelectedFeatures">
+                @foreach (var item in Model.Features)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>        <div class="mb-3 form-group">
+            <label>Seleziona gli/le attori/attrici:</label>
+            <select class="d-block w-100" asp-for="SelectedActors">
+                @foreach (var item in Model.Actors)
+                {
+                    <option value="@item.Id">@item.Name @item.Surname</option>
+                }
+            </select>
+        </div>
+        <div class="form-group mb-3">
+            <label>Inserisci l'anno di rilascio film</label>
+            <input type="text" asp-for="MediaInfo.Year" class="form-control" />
+            <span class="text-danger" asp-validation-for="MediaInfo.Year"></span>
+        </div>
+        <button class="btn btn-primary">Crea</button>
+    </form>
+</div>

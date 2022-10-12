@@ -1,0 +1,17 @@
+﻿@model Actor 
+<div>
+    <form asp-controller="Actor" asp-action="Update" method="post">
+       @Html.AntiForgeryToken() 
+        <div class="form-group mb-3">
+            <label>Inserisci il nome dell' attore</label>
+            <input type="text" asp-for="Name" class="form-control" />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label>Inserisci il cognome dell' attore </label>
+            <input type="text" asp-for="Surname" class="form-control" />
+            <span class="text-danger" asp-validation-for="Surname"></span>
+        </div>
+        <button class="btn btn-primary">Crea</button>
+    </form>
+</div>
