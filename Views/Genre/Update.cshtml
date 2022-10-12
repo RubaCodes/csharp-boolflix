@@ -1,9 +1,9 @@
-﻿@model Feature
+﻿@model Genre 
 <div>
-    <form asp-controller="Feature" asp-action="Update" method="post">
+    <form asp-controller="Genre" asp-action="Update" method="post">
        @Html.AntiForgeryToken() 
         <div class="form-group mb-3">
-            <label >Inserisci il nome della feature</label>
+            <label >Inserisci il nome del genre da modificare</label>
             <input type="text" asp-for="Name" class="form-control" />
             <span class="text-danger" asp-validation-for="Name"></span>
         </div>

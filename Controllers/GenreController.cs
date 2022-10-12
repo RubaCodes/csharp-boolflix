@@ -27,9 +27,9 @@ namespace csharp_boolflix.Controllers
             try
             {
                 _context.SaveChanges();
-            }
+            }// legge lo unique solo al bd
             catch (Exception e) {
-                return NotFound(e.InnerException.Message);
+                return View(genre);
             }
             return RedirectToAction("Genres", "Editor");
         }
@@ -38,29 +38,29 @@ namespace csharp_boolflix.Controllers
         [HttpGet]
         public IActionResult Update(int id)
         {
-            Feature feature = _context.Features.Find(id);
-            return View(feature);
+            Genre genre = _context.Genres.Find(id);
+            return View(genre);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(Feature feature)
+        public IActionResult Update( Genre genre)
         {
             if (!ModelState.IsValid)
             {
-                return View(feature);
+                return View(genre);
             }
-            _context.Features.Update(feature);
+            _context.Genres.Update(genre);
             _context.SaveChanges();
-            return RedirectToAction("Features", "Editor");
+            return RedirectToAction("Genres", "Editor");
         }
         //delete
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            Feature feature = _context.Features.Find(id);
-            _context.Features.Remove(feature);
+            Genre genre= _context.Genres.Find(id);
+            _context.Genres.Remove(genre);
             _context.SaveChanges();
-            return RedirectToAction("Features", "Editor");
+            return RedirectToAction("Genres", "Editor");
         }
     }
 }
