@@ -37,7 +37,8 @@ namespace csharp_boolflix.Controllers
 
         public IActionResult Actors()
         {
-            return View();
+            List<Actor> actors = _context.Actors.ToList();
+            return View(actors);
         }
     }
 }
