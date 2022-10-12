@@ -1,12 +1,10 @@
-﻿@{
-}
-@model Feature
+﻿@model Feature
 <div>
     <form asp-controller="Feature" asp-action="Create" method="post">
-        @
-        < class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="text" asp-for="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+       @Html.AntiForgeryToken() 
+        <div class="form-group">
+            <label for="exampleInputEmail1">Inserisci il nome della feature</label>
+            <input type="text" asp-for="Name" class="form-control" /> 
+        </div>
     </form>
 </div>

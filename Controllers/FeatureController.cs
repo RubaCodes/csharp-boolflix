@@ -2,8 +2,14 @@
 
 namespace csharp_boolflix.Controllers
 {
+    
     public class FeatureController : Controller
     {
+        BoolflixContext _context;
+        public FeatureController() {
+            _context = new BoolflixContext();
+        }
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -11,9 +17,14 @@ namespace csharp_boolflix.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create()
+        public IActionResult Create( Feature feature)
         {
-            return View();
+            if (!ModelState.IsValid) {
+                return View(feature);
+            }
+            _context.Features.Add(feature);
+            _context.SaveChanges();
+            return RedirectToAction("Features","Editor");
         }
     }
 }
