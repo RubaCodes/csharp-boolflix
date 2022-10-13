@@ -1,6 +1,6 @@
 ﻿public class MediaInfo {
     public int MediaInfoId { get; set; }
-    public string Year { get; set; }
+    public  int Year { get; set; }
     public bool IsNew { get; set; }
 
     public int? MovieId { get; set; }

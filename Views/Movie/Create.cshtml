@@ -48,11 +48,11 @@
             <input type="number" step="1" min="0" asp-for="MediaInfo.Year" class="form-control" />
             <span class="text-danger" asp-validation-for="MediaInfo.Year"></span>
         </div>
-@*        <div class="form-group mb-3">
+        <div class="form-group mb-3">
             <label>E' nuovo?'</label>
-            <input type="checkbox" asp-for="MediaInfo.IsNew" class="form-control" />
+            <input asp-for="MediaInfo.IsNew" />
             <span class="text-danger" asp-validation-for="MediaInfo.IsNew"></span>
-        </div>*@
+        </div>
         <button class="btn btn-primary">Crea</button>
     </form>
 </div>
